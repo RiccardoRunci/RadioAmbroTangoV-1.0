@@ -1,0 +1,68 @@
+h1
+{
+    color:white;
+}
+h3
+{
+    margin-left:5px;    
+}
+a
+{
+    color:white;
+    font-size: larger;
+}
+form
+{
+    background:rgb(243, 243, 234);
+}
+
+input
+{
+    margin-bottom:5px;
+    margin-left: 5px;
+}
+
+tr:hover {background-color:green;}
+tr:nth-child(even) {background-color:darkgoldenrod }
+th {background-color: #ec0d0d; color: rgba(255, 255, 255, 0.918); }
+td, th {
+    border: 1px solid black;
+    padding: 0.5rem;
+  }
+label
+{
+    margin-left: 5px;
+}
+.footer 
+{
+    background-color: rgb(3, 57, 235);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.DivCanzoni
+{
+    border-style:solid; 
+    border-color:#070707; 
+    border-width:5px;
+    margin-top:3px;
+    background-color: rgb(63, 89, 177);
+}
+button
+{
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.PlayerYouTube
+{
+    margin-top: 5px;
+    margin-bottom:5px;
+    margin-left: 5px;
+}
+
+.PlayerVocali
+{
+    margin-top: 2px;
+    margin-left: 5px;
+}

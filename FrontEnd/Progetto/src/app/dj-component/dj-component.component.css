@@ -1,0 +1,81 @@
+h2
+{
+    color:rgb(230, 216, 26);
+    margin-bottom:0px;
+}
+.footer 
+{
+    background-color: rgb(3, 57, 235);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+a
+{
+    color:white;
+    font-size: larger;
+}
+button
+{
+    margin-top: 5px;
+    margin-bottom:5px;
+    margin-left: 5px;
+}
+.DivEpisodi
+{
+    border-style:solid; 
+    border-color:#3af601; 
+    border-width:5px;
+    margin-top:0px;
+    background-color: rgb(63, 89, 177);
+}
+.labelDivEpisodi
+{
+    color: rgb(241, 225, 0);
+    font-size: larger;
+    padding: 8px;
+    margin-left: 5px;
+    font-weight:  bold;
+}
+
+.labelEpisodioSelezionato
+{
+    font-weight:  bold;
+    color: rgb(3, 53, 1);
+    font-size: x-large;
+}
+.ErrorelabelEpisodioSelezionato
+{
+    font-weight:  bold;
+    color: rgb(255, 0, 0);
+    margin-left: 10px;
+    font-size: medium;
+}
+
+.DivCanzoni
+{
+    background-color: rgb(129, 151, 224);
+    border-style:solid; 
+    border-color:#3af601; 
+    border-width:5px;
+}
+.labelDivCanzoni
+{
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    padding: 8px;
+    margin-left: 5px;
+    font-weight:  bold;
+}
+.DivVocale
+{
+    background-color: rgb(11, 45, 156);
+    border-style:solid; 
+    border-color:#3af601; 
+    border-width:5px;
+}
+
+.btn-lg
+{
+    margin-left: 0px;
+}

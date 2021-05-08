@@ -1,0 +1,61 @@
+<h2 class="bg-primary">DJ -> Inserisci canzoni</h2>
+<div class="DivEpisodi">
+    <span class="labelDivEpisodi">Inserisci il nome del nuovo episodio</span><br>
+    <input type="text" class="form-control" #NomeEpisodio>
+    <button type="button" (click)="insersiciEpisodio(NomeEpisodio.value)" class="btn btn-primary">Nuovo Episodio</button><br>
+
+    <span class="labelDivEpisodi">Oppure scegli dall' Elenco Episodi:</span>
+    <select class="form-control" id="FormSelezione" (change)="selectChangeHandler($event)" aria-label="Default select example">
+    <option selected>Seleziona Episodio</option>
+    <option *ngFor='let Episodi of ArrayEpisodi' value="{{Episodi.NomeEpisodio}}">{{Episodi.NomeEpisodio}}</option>
+    </select>
+   
+<div *ngIf="EpisodioSelezionato==='' || EpisodioSelezionato==='Seleziona Episodio' ; else SeleEpis">
+	<span class="ErrorelabelEpisodioSelezionato">Devi selezionare un episodio!</span> </div>
+    
+    <ng-template #SeleEpis><br>
+        <span class="labelDivEpisodi">Episodio Selezionato:</span> 
+        <span class="labelEpisodioSelezionato">{{EpisodioSelezionato}}</span><br>
+    </ng-template>
+
+    <button type="button" (click)="eliminaEpisodio(EpisodioSelezionato)" class="btn btn-danger">Cancella Episodio</button><br>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+<form [formGroup]="FormCanzoni">
+<div class="DivCanzoni">
+    <span class="labelDivCanzoni">Inserisci il link della canzone:</span>
+        <input type="text" 
+            formControlName="LinkYouTube"
+            autocomplete="OK!"
+            [ngClass]="{ 'is-invalid':f.LinkYouTube.errors }"
+            class="form-control"  #LinkCanzone>
+            
+            <div *ngIf="f.LinkYouTube.touched && f.LinkYouTube.invalid" class="alert alert-danger">
+            <div *ngIf="f.LinkYouTube.errors?.required">è richiesta una canzone presa da YouTube.</div>
+            <div *ngIf="f.LinkYouTube.errors?.pattern">Inserire un valido link di YouTube.</div>
+            </div>
+    <!-- <button type="button" (click)="insersiciCanzone(LinkCanzone.value)" class="btn btn-primary">Inserisci la canzone nell'episodio!!!</button><br> -->
+</div>
+</form>
+<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="DivVocale" style="text-align:center">
+    <span class="labelDivEpisodi">Inserisci il vocale per la canzone:</span><br>
+    <a (click)="initiateRecording()" class="btn btn-primary" *ngIf="!getRecording()"> Start Recording </a><br>
+      <a (click)="stopRecording()" class="btn btn-danger" *ngIf="getRecording()"> Stop Recording </a><br>
+      <div class="clearfix">
+      <audio controls="" *ngIf="getUrl()">
+          <source [src]="sanitize(getUrl())" type="audio/wav">
+      </audio>
+      </div>
+      <a (click)="clearAudioRecordedData()" class="btn btn-danger" *ngIf="!getRecording()">RESET!</a>
+</div>
+<button type="button" (click)="insersiciCanzone(LinkCanzone.value)" class="btn btn-primary btn-lg btn-block">Inserisci la canzone nell'episodio!!!</button>
+<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="footer"> 
+    <nav>
+      <a routerLink="/LoginUtente">Area Utenti</a>|
+      <a routerLink="/LoginDj">Area DJ</a>|
+      <a routerLink="/LoginAdmin">Area Admin</a>|
+      <button type="button" (click)="LogOut()" class="btn btn-danger">ESCI!</button><br>
+    </nav>
+</div> 

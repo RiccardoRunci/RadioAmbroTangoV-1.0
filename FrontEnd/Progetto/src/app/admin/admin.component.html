@@ -1,0 +1,34 @@
+<h1 class="bg-primary">Pagina Amministratore!</h1>
+<form>
+    <div class="form-group">
+        <label>Inserisci il nome da eliminare</label><br>
+        <input type="text" #EliminaNome><br>
+        <button type="button" (click)="Elimina(EliminaNome.value)" class="btn btn-primary">Elimina</button><br>
+        <button type="button" (click)="Cerca(EliminaNome.value)" class="btn btn-primary">Cerca</button><br>
+
+        <button type="button" (click)="Elenco()" class="btn btn-primary">Visualizza Elenco</button><br>
+
+        <p *ngIf="ArrayUtente.length===0;else TabUtenti">Non ci sono utenti da visualizzare!</p>
+        <ng-template #TabUtenti><h3>Tabella Utenti:</h3></ng-template>
+        <table *ngIf="ArrayUtente.length!==0;" style="width:100%">
+            <tr>
+              <th>ID</th>
+              <th>EMAIL</th>
+              <th>PASSWORD</th>
+            </tr>
+            <tr *ngFor='let utenti of ArrayUtente'>
+              <td>{{utenti.IdUtente}}</td>
+              <td>{{utenti.EmailUtente}}</td>
+              <td>{{utenti.PasswordUtente}}</td>
+            </tr>
+         </table>
+    </div>
+</form>
+<div class="footer"> 
+  <nav>
+    <a routerLink="/LoginUtente">Area Utenti</a>|
+    <a routerLink="/LoginDj">Area DJ</a>|
+    <a routerLink="/LoginAdmin">Area Admin</a>|
+    <button type="button" (click)="LogOut()" class="btn btn-danger">ESCI!</button><br>
+  </nav>
+</div> 

@@ -1,0 +1,32 @@
+<select class="form-control" id="FormSelezione" (change)="selectChangeHandler($event)" aria-label="Default select example">
+  <option selected>Seleziona Episodio</option>
+  <option *ngFor='let Episodi of ArrayEpisodi' value="{{Episodi.NomeEpisodio}}">{{Episodi.NomeEpisodio}}</option>
+</select>
+<button type="button" (click)=" ElencoCanzoni()" class="btn btn-primary btn-lg btn-block">Tutte le Canzoni</button><br>
+
+<p *ngIf="ArrayCanzoni.length===0;else MsgCanzoni">Non ci sono Canzoni da visualizzare!</p>
+<ng-template #MsgCanzoni><h3>Canzoni: </h3></ng-template>
+<div *ngIf="ArrayCanzoni.length!==0;" style="width:100%">
+  <div class="DivCanzoni" *ngFor='let Canzoni of ArrayCanzoni'>
+     <audio class="PlayerVocali" src="http://localhost:8080/static/{{Canzoni.LinkYouTube}}.wav" controls preload='auto'></audio>
+      <!-- npm install youtube-player, importalo in src/app/app.module.ts,
+              ricordati di importare lo script su /src/app/index.html  -->
+     <youtube-player class="PlayerYouTube"
+        videoId="{{Canzoni.LinkYouTube}}" 
+        suggestedQuality="highres" 
+        [height]="250" 
+        [width]="250" 
+      > </youtube-player>
+    </div>
+  </div> 
+ 
+ 
+      
+ 
+<div class="footer"> 
+  <nav>
+    <a routerLink="/LoginUtente">Area Utenti</a>|
+    <a routerLink="/LoginDj">Area DJ</a>|
+    <a routerLink="/LoginAdmin">Area Admin</a>|
+    <button type="button" (click)="LogOut()" class="btn btn-danger">ESCI!</button><br>
+  </nav>
