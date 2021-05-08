@@ -1,0 +1,7 @@
+Lancia node:
+nodemon index.js
+
+
+Per lanciare angular con proxy:
+cd  C:\Users\Riccardo\Desktop\Progetti_Angular\NonFunzioneraMai\FrontEnd\Progetto\
+ng serve --proxy-config proxy.conf.json
