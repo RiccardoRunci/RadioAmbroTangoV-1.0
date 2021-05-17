@@ -1,7 +1,18 @@
-Lancia node:
+Una volta scaricato tutto il codice da github devi estrarlo in una cartella.
+Poi ti posizioni dentro /BackEnd (dove trovi il file package.json) e digiti da terminale "npm install".
+Per fare questo passo sopra devi avere nodejs installato (e npm installato).
+
+Per lanciare node:
+Da terminale vai alla cartella  /BackEnd/index.js
 nodemon index.js
 
+Devi installare anche "angular cli" (dopo aver installato nodejs e npm) e devi installare le dipendenze che servono per far girare il sorgente scaricato.
+Posizionati (sempre utilizzando il terminale) sulla directory /FrontEnd/Progetto/. Qui troverai il file package.json.
+Digita da terminale "npm install".
 
-Per lanciare angular con proxy:
-cd  C:\Users\Riccardo\Desktop\Progetti_Angular\NonFunzioneraMai\FrontEnd\Progetto\
+Per compilare/lanciare angular con proxy:
+cd  C:\PATH COMPLETA DI DOVE è il sorgente\FrontEnd\Progetto\
 ng serve --proxy-config proxy.conf.json
+
+Per aprirlo (su un qualsiasi browser):
+http://localhost:4200/
